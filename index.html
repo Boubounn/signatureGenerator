@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+        integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous">
+    </script>
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="app">
+        <div>
+            <form>
+                <div class="form-group">
+                    <label for="email">Email :</label>
+                    <input type="email" name="email" class="form-control col-3" v-model="inputs.email">
+                </div>
+                <div class="form-group">
+                    <label for="name">Nom :</label>
+                    <input type="text" name="name" class="form-control col-3" v-model="inputs.name">
+                </div>
+                <div class="form-group">
+                    <label for="firstName">Prénom :</label>
+                    <input type="text" name="firstName" class="form-control col-3" v-model="inputs.firstName">
+                </div>
+                <div class="form-group">
+                    <label for="cellPhone">Téléphone portable :</label>
+                    <input type="tel" name="" class="form-control col-3" v-model="inputs.phone">
+                </div>
+                <div class="form-group">
+                    <label for="adress">Adresse :</label>
+                    <input type="text" name="adress" class="form-control col-3" v-model="inputs.adress">
+                </div>
+            </form>
+        </div>
+        <div id="preview">
+            <div>
+                <p v-if="inputs.name != null">{{inputs.name}}</p>
+                <p >{{inputs.firstName}}</a></p>
+                <p v-if="inputs.phone != null"><a v-bind:href="`tel:${inputs.phone}`">{{inputs.phone}}</a></p>
+                <p v-if="inputs.email != null"><a v-bind:href="`mailto:${inputs.email}`">{{inputs.email}}</a></p>
+                <p v-if="inputs.adress != null"><a v-bind:href="`https://www.google.fr/maps/place/${inputs.adress}`">{{inputs.adress}}</a></p>
+            </div>
+        </div>
+    </div>
+
+</body>
+<script src="main.js"></script>
+
+</html>
